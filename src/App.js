@@ -17,7 +17,6 @@ useEffect(()=> {
 async function GetData() {
   const res = await axios.get(base_url) 
   try {
-    console.log(res.data);
     setCharacters(res.data)
   } catch {
     console.log(new Error)
