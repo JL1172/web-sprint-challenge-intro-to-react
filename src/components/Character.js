@@ -10,14 +10,20 @@ flex-wrap: wrap;
 margin: 3rem;
 backdrop-filter: blur(3px);
 color: black;
+img {
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+}
 `
 
 export default function Character(props) {
-    const {name, birthYear, dataOfCharacter} = props;
+    const {name, birthYear, dataOfCharacter,imgSrc} = props;
 
     return (
         <>
         <StyledDiv>
+            <img src = {imgSrc}/>
             <h3>{name}</h3>
             <h3>{birthYear}</h3>
         </StyledDiv>

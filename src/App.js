@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 import Character from './components/Character';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
   const [characters,setCharacters] = useState([]);
@@ -11,6 +12,7 @@ const App = () => {
   // side effect in a component, you want to think about which state and/or props it should
   // sync up with, if any.
 const base_url = "https://swapi.dev/api/people/";
+const imgSrc =" https://e7.pngegg.com/pngimages/796/822/png-clipart-death-star-r2-d2-anakin-skywalker-star-wars-the-clone-wars-computer-icons-22-monochrome-silhouette.png";
 
 
 useEffect(()=> {
@@ -33,6 +35,7 @@ GetData();
               name = {char.name}
               dataOfCharacter = {char} 
               birthYear = {char.birth_year}
+              imgSrc = {imgSrc}
           />
         })
       }
