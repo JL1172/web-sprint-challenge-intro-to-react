@@ -2,6 +2,8 @@
 import React, {useState, useEffect} from "react";
 import styled from "styled-components";
 import { keyframes } from "styled-components";
+import ReactStrap from 'reactstrap';
+import Accordian from "./Accordian";
 
 const kf = keyframes`
 50% {
@@ -19,7 +21,6 @@ const kf1 = keyframes`
     transform: translateX(600px);
 }
 `
-
 const kf2 = keyframes`
 20% {
     border-color: royalblue;
@@ -52,18 +53,16 @@ const kf2 = keyframes`
 }
 `
 
-
-
-
 const StyledDiv = styled.div`
 display: flex;
 align-items: center;
 border: 2px solid gray;
 flex-wrap: wrap;
 margin: 3rem;
-backdrop-filter: blur(3px);
+backdrop-filter: blur(8px);
 color: black;
 padding-right: 1rem;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 img {
     width: 70px;
     height: 60px;
@@ -78,7 +77,7 @@ div {
     border: 1px solid gray;
     padding-left: 0;
     padding-left: 20rem;
-   animation : ${kf2} 5s infinite linear; 
+   animation : ${kf2} 19s infinite linear; 
 }
 opacity: 0;
 transition: .3s; 
@@ -86,14 +85,17 @@ animation: ${kf} 1s ease-in-out forwards;
 `
 
 export default function Character(props) {
-    const {name, birthYear, dataOfCharacter,redLightSaber,greenLightSaber,selected} = props;
-
+    const {name, birthYear, dataOfCharacter,redLightSaber,
+        select,setSelect, id,selectedCharacter,setSelectedCharacter} = props;
+    const clickHandler = () => {
+        
+    }
     return (
         <>
         <StyledDiv>
-            <img className="images" src = {redLightSaber}/>
+            <img onClick = {clickHandler} className="images" src = {redLightSaber}/>
             <h3>{name}</h3>
-           <div></div>
+           <Accordian />
         </StyledDiv>
         </>
     )

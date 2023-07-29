@@ -5,6 +5,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
   const [characters,setCharacters] = useState([]);
+  const [selectedCharacter,setSelectedCharacter] = useState('')
+  const [select,setSelect] = useState(false);
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
 
@@ -31,11 +33,15 @@ GetData();
       {
         characters.map((char,index) => {
           return <Character key = {index}
+              id = {index}
               name = {char.name}
               dataOfCharacter = {char} 
               birthYear = {char.birth_year}
               redLightSaber = {redLightSaber}
-              selected = {char.name === "Darth Vader"}
+              select = {select}
+              setSelect = {setSelect}
+              selectedCharacter = {selectedCharacter}
+              setSelectedCharacter = {setSelectedCharacter}
           />
         })
       }
