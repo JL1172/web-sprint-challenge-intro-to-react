@@ -7,6 +7,8 @@ const App = () => {
   const [characters,setCharacters] = useState([]);
   const [selectedCharacter,setSelectedCharacter] = useState('')
   const [select,setSelect] = useState(false);
+
+  console.log(selectedCharacter)
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
 

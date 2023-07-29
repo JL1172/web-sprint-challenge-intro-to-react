@@ -69,6 +69,8 @@ img {
     background-color: inherit;
     transform: rotate(90deg);
     margin-left: 1rem;
+    transform : ${props => props.result ? 'rotate(180deg)' : ''}; 
+    transition: .3s ease-in-out; 
 }
 h3{
     animation: ${kf1} .5s ease-in forwards;
@@ -87,16 +89,23 @@ animation: ${kf} 1s ease-in-out forwards;
 export default function Character(props) {
     const {name, birthYear, dataOfCharacter,redLightSaber,
         select,setSelect, id,selectedCharacter,setSelectedCharacter} = props;
+
     const clickHandler = () => {
-        
+        if (selectedCharacter === name) {
+            setSelectedCharacter('');
+        } else {
+            setSelectedCharacter(name)
+        }
     }
+    let result = selectedCharacter === name;
     return (
         <>
-        <StyledDiv>
+        <StyledDiv result = {result}>
             <img onClick = {clickHandler} className="images" src = {redLightSaber}/>
             <h3>{name}</h3>
-           <Accordian />
+            <div></div>
         </StyledDiv>
+        <Accordian dataOfCharacter = {dataOfCharacter} selectedCharacter = {selectedCharacter} result = {result}/>
         </>
     )
 }
