@@ -4,7 +4,7 @@ import { keyframes } from "styled-components";
 import ReactStrap from 'reactstrap';
 import Films from "./Films";
 
-const rebelLogo = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhHsIzV5mNwSz_HiczMCdLiSOcWN7iTmuRQyxuVhx2wgcXvf7T726HmCZ8u7XUHx3XJjQ&usqp=CAU";
+const rebelLogo = "https://cdn.icon-icons.com/icons2/318/PNG/512/Death-Star-icon_34500.png";
 const sithLogo = 'https://www.iconarchive.com/download/i103540/sensibleworld/starwars/Lightsaber-Red.1024.png';
 const kf2 = keyframes`
 20% {
@@ -47,7 +47,12 @@ const kf2 = keyframes`
     border-top-color : #22BA1A; 
 }
 `
+const kfs1 = keyframes`
 
+100% {
+    transform: rotateY(360deg);
+}
+`
 const StyledDiv = styled.div`
 padding: 1rem;
 border-left : 2px solid gray;
@@ -68,7 +73,18 @@ img {
     height: 100px;
     width : 100px;
     background-color : transparent; 
+    position : absolute;
+    right: 5rem;
+    top: 5rem;
+    animation: ${kfs1} 10s ease infinite;
 }
+div {
+    padding: .6rem;
+}
+h5 {
+    padding-bottom: 1rem;
+}
+
 `
 
 
