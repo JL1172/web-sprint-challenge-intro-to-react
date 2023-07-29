@@ -20,6 +20,39 @@ const kf1 = keyframes`
 }
 `
 
+const kf2 = keyframes`
+20% {
+    border-color: royalblue;
+}
+30% {
+    border-color: crimson;
+}
+40% {
+    border-color: #22BA1A;
+}
+50% {
+    border-color: royalblue;
+   
+}
+60% {
+    border-color: crimson;
+    
+}
+70% {
+    border-color: #22BA1A;
+}
+80% {
+    border-color : royalblue;
+}
+90% {
+    border-color : crimson;
+}
+100% {
+    border-color : #22BA1A; 
+}
+`
+
+
 
 
 const StyledDiv = styled.div`
@@ -43,9 +76,9 @@ h3{
 }
 div {
     border: 1px solid gray;
-    padding-left: -10rem;
+    padding-left: 0;
     padding-left: 20rem;
-   
+   animation : ${kf2} 5s infinite linear; 
 }
 opacity: 0;
 transition: .3s; 
